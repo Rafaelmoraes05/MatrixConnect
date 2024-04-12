@@ -17,4 +17,8 @@ public class LeitorArquivo {
         return "Matriz2.txt";
     }
 
+    public static String obterCaminhoEquivalencia(){
+        return "Equivalencia.txt";
+    }
+
 }

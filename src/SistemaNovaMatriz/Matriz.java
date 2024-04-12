@@ -4,14 +4,14 @@ import java.util.List;
 
 public class Matriz {
     private int ano;
-    private int codigo;
+    private int codigoMatriz;
     private String nomeCurso;
     private List<Disciplina> disciplinas;
     private NivelCurso nivelCurso;
 
-    public Matriz(int ano, int codigo, String nomeCurso, List<Disciplina> disciplinas, NivelCurso nivelCurso) {
+    public Matriz(int ano, int codigoMatriz, String nomeCurso, List<Disciplina> disciplinas, NivelCurso nivelCurso) {
         this.ano = ano;
-        this.codigo = codigo;
+        this.codigoMatriz = codigoMatriz;
         this.nomeCurso = nomeCurso;
         this.disciplinas = disciplinas;
         this.nivelCurso = nivelCurso;
@@ -25,12 +25,12 @@ public class Matriz {
         this.ano = ano;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getCodigoMatriz() {
+        return codigoMatriz;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setCodigoMatriz(int codigoMatriz) {
+        this.codigoMatriz = codigoMatriz;
     }
 
     public String getNomeCurso() {

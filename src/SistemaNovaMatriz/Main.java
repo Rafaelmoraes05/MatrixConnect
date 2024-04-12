@@ -1,8 +1,5 @@
 package SistemaNovaMatriz;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,7 +80,7 @@ public class Main {
 
     private static void exibirMatriz(Matriz matriz) {
         System.out.println("Ano: " + matriz.getAno());
-        System.out.println("Código: " + matriz.getCodigo());
+        System.out.println("Código: " + matriz.getCodigoMatriz());
         System.out.println("Nome do Curso: " + matriz.getNomeCurso());
         System.out.println("Nível do Curso: " + matriz.getNivelCurso());
         System.out.println("Disciplinas:");
