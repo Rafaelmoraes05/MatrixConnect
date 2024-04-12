@@ -1,0 +1,6 @@
+ano:2012
+codigo:1
+nomeCurso:Tecnologia em Desenvolvimento de Sistemas
+nivelCurso:GRADUACAO
+disciplinas:
+|Y601201|EMPREENDEDORISMO EM NEGÓCIOS DE TIC|
