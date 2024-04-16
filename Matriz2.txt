@@ -2,5 +2,5 @@ ano:2022
 codigo:2
 nomeCurso:Tecnologia em Desenvolvimento de Sistemas
 nivelCurso:GRADUACAO
-disciplinas:
-|TADS23D001|EMPREENDEDORISMO|
+disciplinas:2
+TADS23D001:EMPREENDEDORISMO
