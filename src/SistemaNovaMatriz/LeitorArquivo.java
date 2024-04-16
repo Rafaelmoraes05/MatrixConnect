@@ -1,5 +1,9 @@
 package SistemaNovaMatriz;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Scanner;
 
 public class LeitorArquivo {
@@ -19,6 +23,15 @@ public class LeitorArquivo {
 
     public static String obterCaminhoEquivalencia(){
         return "Equivalencia.txt";
+    }
+
+    public static String lerConteudoArquivo(String caminhoArquivo) throws IOException {
+        List<String> linhas = Files.readAllLines(Paths.get(caminhoArquivo));
+        StringBuilder conteudo = new StringBuilder();
+        for (String linha : linhas) {
+            conteudo.append(linha).append("\n");
+        }
+        return conteudo.toString();
     }
 
 }
