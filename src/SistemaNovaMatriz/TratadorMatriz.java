@@ -6,28 +6,34 @@ import java.util.List;
 
 public class TratadorMatriz {
     public static void main(String[] args) {
-            try {
-                // Ler o conteúdo do arquivo da matriz 1
-                String caminhoMatriz1 = LeitorArquivo.obterCaminhoMatriz1();
-                String conteudoMatriz1 = LeitorArquivo.lerConteudoArquivo(caminhoMatriz1);
-                Matriz matriz1 = criarMatrizAPartirDoArquivo(conteudoMatriz1);
-                System.out.println("Matriz 1");
-                exibirMatriz(matriz1);
-
-                // Exibir um separador entre as matrizes
+        try {
+            List<Matriz> matrizes = lerMatrizes();
+            for (int i = 0; i < matrizes.size(); i++) {
+                System.out.println("Matriz " + (i + 1));
+                exibirMatriz(matrizes.get(i));
                 System.out.println("-----------------------------------------");
-
-                // Ler o conteúdo do arquivo da matriz 2
-                String caminhoMatriz2 = LeitorArquivo.obterCaminhoMatriz2();
-                String conteudoMatriz2 = LeitorArquivo.lerConteudoArquivo(caminhoMatriz2);
-                Matriz matriz2 = criarMatrizAPartirDoArquivo(conteudoMatriz2);
-                System.out.println("Matriz 2");
-                exibirMatriz(matriz2);
-            } catch (IOException e) {
-                System.err.println("Erro ao ler o arquivo: " + e.getMessage());
-                e.printStackTrace(); // Isso imprime o rastreamento completo da exceção para ajudar na depuração
             }
+        } catch (IOException e) {
+            System.err.println("Erro ao ler o arquivo: " + e.getMessage());
+            e.printStackTrace();
         }
+    }
+
+    private static List<Matriz> lerMatrizes() throws IOException {
+        List<Matriz> matrizes = new ArrayList<>();
+
+        String caminhoMatriz1 = LeitorArquivo.obterCaminhoMatriz1();
+        String conteudoMatriz1 = LeitorArquivo.lerConteudoArquivo(caminhoMatriz1);
+        Matriz matriz1 = criarMatrizAPartirDoArquivo(conteudoMatriz1);
+        matrizes.add(matriz1);
+
+        String caminhoMatriz2 = LeitorArquivo.obterCaminhoMatriz2();
+        String conteudoMatriz2 = LeitorArquivo.lerConteudoArquivo(caminhoMatriz2);
+        Matriz matriz2 = criarMatrizAPartirDoArquivo(conteudoMatriz2);
+        matrizes.add(matriz2);
+
+        return matrizes;
+    }
 
     private static Matriz criarMatrizAPartirDoArquivo(String conteudoArquivo) {
         // Inicializar variáveis para armazenar informações da matriz
@@ -35,7 +41,7 @@ public class TratadorMatriz {
         int codigo = 0;
         String nomeCurso = null;
         NivelCurso nivelCurso = null;
-        List<Disciplina> disciplinas = new ArrayList<>();
+        List<Disciplina> disciplinasMatrizes = new ArrayList<>();
 
         // Dividir o conteúdo do arquivo em linhas
         String[] linhas = conteudoArquivo.split("\n");
@@ -70,20 +76,20 @@ public class TratadorMatriz {
                     break;
                 case "disciplinas":
                     iniciouDisciplinas = true;
-                    continue; // Continue para evitar que a linha "disciplinas=" seja processada como uma disciplina
+                    continue; // Continue para evitar que a linha "disciplinasMatrizes=" seja processada como uma disciplina
                 default:
                     // Se o atributo for desconhecido, ignorar
                     break;
             }
 
-            // Se já iniciou as disciplinas, adicionar cada linha como uma disciplina até encontrar uma linha em branco ou o fim do arquivo
+            // Se já iniciou as disciplinasMatrizes, adicionar cada linha como uma disciplina até encontrar uma linha em branco ou o fim do arquivo
             if (iniciouDisciplinas) {
-                    disciplinas.add(new Disciplina(partes[0], partes[1], 0));
+                    disciplinasMatrizes.add(new Disciplina(partes[0], partes[1], 0));
             }
         }
 
         // Criar e retornar a matriz com as informações coletadas
-        return new Matriz(ano, codigo, nomeCurso, disciplinas, nivelCurso);
+        return new Matriz(ano, codigo, nomeCurso, disciplinasMatrizes, nivelCurso);
     }
 
     private static void exibirMatriz(Matriz matriz) {
