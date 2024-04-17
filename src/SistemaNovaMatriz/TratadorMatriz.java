@@ -6,19 +6,8 @@ import java.util.List;
 
 public class TratadorMatriz {
     public static void main(String[] args) {
-        try {
-            List<Matriz> matrizes = lerMatrizes();
-            for (int i = 0; i < matrizes.size(); i++) {
-                System.out.println("Matriz " + (i + 1));
-                exibirMatriz(matrizes.get(i));
-                System.out.println("-----------------------------------------");
-            }
-        } catch (IOException e) {
-            System.err.println("Erro ao ler o arquivo: " + e.getMessage());
-            e.printStackTrace();
-        }
+        exibirMatriz();
     }
-
     private static List<Matriz> lerMatrizes() throws IOException {
         List<Matriz> matrizes = new ArrayList<>();
 
@@ -91,15 +80,24 @@ public class TratadorMatriz {
         // Criar e retornar a matriz com as informações coletadas
         return new Matriz(ano, codigo, nomeCurso, disciplinasMatrizes, nivelCurso);
     }
-
-    private static void exibirMatriz(Matriz matriz) {
-        System.out.println("Ano: " + matriz.getAno());
-        System.out.println("Código: " + matriz.getCodigoMatriz());
-        System.out.println("Nome do Curso: " + matriz.getNomeCurso());
-        System.out.println("Nível do Curso: " + matriz.getNivelCurso());
-        System.out.println("Disciplinas:");
-        for (Disciplina disciplina : matriz.getDisciplinas()) {
-            System.out.println("- Código: " + disciplina.getCodigo() + ", Nome: " + disciplina.getNome() + ", Carga Horária: " + disciplina.getCargaHoraria());
+    public static void exibirMatriz() {
+        try {
+            List<Matriz> matrizes = TratadorMatriz.lerMatrizes();
+            for (Matriz matriz : matrizes) {
+                System.out.println("Matriz:");
+                System.out.println("Ano: " + matriz.getAno());
+                System.out.println("Código: " + matriz.getCodigoMatriz());
+                System.out.println("Nome do Curso: " + matriz.getNomeCurso());
+                System.out.println("Nível do Curso: " + matriz.getNivelCurso());
+                System.out.println("Disciplinas:");
+                for (Disciplina disciplina : matriz.getDisciplinas()) {
+                    System.out.println("- Código: " + disciplina.getCodigo() + ", Nome: " + disciplina.getNome());
+                }
+                System.out.println("-----------------------------------------");
+            }
+        } catch (IOException e) {
+            System.err.println("Erro ao ler o arquivo: " + e.getMessage());
+            e.printStackTrace(); // Isso imprime o rastreamento completo da exceção para ajudar na depuração
         }
     }
 }
