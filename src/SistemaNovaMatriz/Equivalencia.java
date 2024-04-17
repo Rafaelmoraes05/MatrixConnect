@@ -1,44 +1,48 @@
 package SistemaNovaMatriz;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 public class Equivalencia {
-    private Map<String, String> equivalencias;
+    private int codigoMatriz1;
+    private String codigoDisciplina1;
+    private int codigoMatriz2;
+    private String codigoDisciplina2;
 
-    public Equivalencia() {
-        this.equivalencias = new HashMap<>();
-        carregarEquivalencias();
+    public Equivalencia(int codigoMatriz1, String codigoDisciplina1, int codigoMatriz2, String codigoDisciplina2) {
+        this.codigoMatriz1 = codigoMatriz1;
+        this.codigoDisciplina1 = codigoDisciplina1;
+        this.codigoMatriz2 = codigoMatriz2;
+        this.codigoDisciplina2 = codigoDisciplina2;
     }
 
-    private void carregarEquivalencias() {
-        String caminhoArquivo = LeitorArquivo.obterCaminhoEquivalencia();
-
-        try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
-            String linha;
-            while ((linha = br.readLine()) != null) {
-                String[] partes = linha.split("=");
-                if (partes.length == 2) {
-                    String codigo1 = partes[0].trim();
-                    String codigo2 = partes[1].trim();
-                    equivalencias.put(codigo1, codigo2);
-                }
-            }
-        } catch (IOException e) {
-            System.err.println("Erro ao ler o arquivo de equivalência: " + e.getMessage());
-        }
+    public int getCodigoMatriz1() {
+        return codigoMatriz1;
     }
 
-    public String obterEquivalencia(String codigoDisciplina) {
-        return equivalencias.getOrDefault(codigoDisciplina, "N/A");
+    public void setCodigoMatriz1(int codigoMatriz1) {
+        this.codigoMatriz1 = codigoMatriz1;
+    }
+
+    public String getCodigoDisciplina1() {
+        return codigoDisciplina1;
+    }
+
+    public void setCodigoDisciplina1(String codigoDisciplina1) {
+        this.codigoDisciplina1 = codigoDisciplina1;
+    }
+
+    public int getCodigoMatriz2() {
+        return codigoMatriz2;
+    }
+
+    public void setCodigoMatriz2(int codigoMatriz2) {
+        this.codigoMatriz2 = codigoMatriz2;
+    }
+
+    public String getCodigoDisciplina2() {
+        return codigoDisciplina2;
+    }
+
+    public void setCodigoDisciplina2(String codigoDisciplina2) {
+        this.codigoDisciplina2 = codigoDisciplina2;
     }
 }
+
