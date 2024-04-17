@@ -27,19 +27,19 @@ public class HistoricoAcademico {
                     if (linha.contains("Aprovado")) {
                         String[] partes = linha.split("\\s+");
                         String codigo = partes[2];
-                        String discplina = "";
+                        String disciplina = "";
                         for (int i = 3; i < partes.length; i++) {
 
                             if (!partes[i].equals("OBR")) {
-                                discplina = discplina.concat(" ");
-                                discplina = discplina.concat(partes[i]);
+                                disciplina = disciplina.concat(" ");
+                                disciplina = disciplina.concat(partes[i]);
 
                             } else {
                                 break;
                             }
                         }
-                        System.out.println(codigo + "\t" + discplina);
-                        disciplinasHistorico.add(new Disciplina(codigo, discplina, 0));
+                        System.out.println(codigo + "\t" + disciplina);
+                        disciplinasHistorico.add(new Disciplina(codigo, disciplina, 0));
                     }
                 }
             }
