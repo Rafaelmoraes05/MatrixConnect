@@ -1,1 +1,39 @@
-|1|Y601201|=|2|TADS23D001|
+|1|Y601201|=|2|TADS23D19|=|Empreendedorismo|
+|1|Y601302|=|2|TADS23D01|=|Iniciação a Informática|
+|1|Y601305|=|2|TADS23D01|=|Iniciação a Informática|
+|1|Y601503|=|2|TADS23D03|=|Linguagem de Programação I|
+|1|Y601404|=|2|TADS23D05|=|Linguagem inglesa aplicada|
+|1|Y601606|=|2|TADS23D11|=|Estatística Aplicada|
+|1|Y601207|=|2|TADS23D06|=|Relações humanas no trabalho|
+|1|Y602401|=|2|TADS23D09|=|Arquitetura e Organização de computadores|
+|1|Y602502|=|2|TADS23D10|=|Banco de dados|
+|1|Y602403|=|2|TADS23D07|=|Requisitos de Software|
+|1|Y602404|=|2|TADS23D41|=|Tópicos Avançados em Engenharia de Software|
+|1|Y602606|=|2|TADS23D08|=|Linguagem de Programação II|
+|1|ADS.1|=|2|TADS23D12|=|Algoritmos e estruturas de dados|
+|1|ADS.3|=|2|TADS23D16|=|Análise e projeto de sistemas|
+|1|ADS.2|=|2|TADS23D60|=|Projeto de Banco de Dados|
+|1|ADS.4|=|2|TADS23D04|=|Desenvolvimento web I|
+|1|ADS.5|=|2|TADS23D42|=|Linguagem de Definição de Dados|
+|1|ADS.6|=|2|TADS23D15|=|Redes de computadores|
+|1|ADS.7|=|2|TADS23D13|=|Desenvolvimento web 2|
+|1|ADS.9|=|2|TADS23D26|=|Metodologia de pesquisa|
+|1|ADS.10|=|2|TADS23D16|=|Análise e projeto de sistemas|
+|1|ADS.11|=|2|TADS23D43|=|Processo de Desenvolvimento de Software|
+|1|ADS.12|=|2|TADS23D32|=|Computação distribuida|
+|1|ADS.13|=|2|TADS23D14|=|Sistemas Operacionais|
+|1|ADS.8|=|2|TADS23D18|=|Gerência de configuração e testes|
+|1|ADS.21|=|2|TADS23D18|=|Gerência de configuração e testes|
+|1|ADS.14|=|2|TADS23D17|=|Desenvolvimento web 3|
+|1|ADS.18|=|2|TADS23D44|=|Modelagem de Processos de Negócio|
+|1|ADS.20|=|2|TADS23D30|=|Orientação de TCC|
+|1|ADS.22|=|2|TADS23D25|=|Gerência de projetos|
+|1|ADS.23|=|2|TADS23D24|=|Informática e sociedade|
+|1|Y602205|=|2|TADS23D24|=|Informática e sociedade|
+|1|ADS.24|=|2|TADS23D45|=|Modelos de Melhoria de Processo de Software|
+|1|ADS.25|=|2|TADS23D22|=|Desenvolvimento Móvel|
+|1|ADS.16|=|2|TADS23D51|=|Tópicos Avançados em Inteligência Artificial II|
+|1|ADS.26|=|2|TADS23D23|=|Projeto de desenvolvimento de software|
+|1|ADS.19|=|2|TADS23D23|=|Projeto de desenvolvimento de software|
+|1|ADS.28|=|2|TADS23D29|=|Segurança|
+|1|ADS.15|=|2|TADS23D54|=|Desenvolvimento de Software Corporativo|

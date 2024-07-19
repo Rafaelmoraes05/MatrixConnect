@@ -9,7 +9,6 @@ public class TratadorEquivalencia {
         List<Equivalencia> equivalencias = lerEquivalencias();
         exibirEquivalencias(equivalencias);
     }
-
     public static List<Equivalencia> lerEquivalencias() {
         List<Equivalencia> equivalencias = new ArrayList<>();
         try {
@@ -18,15 +17,18 @@ public class TratadorEquivalencia {
             String[] linhas = conteudoEquivalencia.split("\n");
             for (String linha : linhas) {
                 String[] partes = linha.split("=");
-                if (partes.length == 2) {
+                if (partes.length == 3) { // Ajuste para quatro partes
                     String[] codigoMatriz1Partes = partes[0].split("\\|");
                     String[] codigoMatriz2Partes = partes[1].split("\\|");
+                    String nomeDisciplina2 = partes[2].split("\\|")[1]; // Ajuste para pegar o nome da disciplina
+                    
+                    
                     if (codigoMatriz1Partes.length == 3 && codigoMatriz2Partes.length == 3) {
                         int codigoMatriz1 = Integer.parseInt(codigoMatriz1Partes[1]);
                         String codigoDisciplina1 = codigoMatriz1Partes[2];
                         int codigoMatriz2 = Integer.parseInt(codigoMatriz2Partes[1]);
                         String codigoDisciplina2 = codigoMatriz2Partes[2];
-                        Equivalencia equivalencia = new Equivalencia(codigoMatriz1, codigoDisciplina1, codigoMatriz2, codigoDisciplina2);
+                        Equivalencia equivalencia = new Equivalencia(codigoMatriz1, codigoDisciplina1, codigoMatriz2, codigoDisciplina2, nomeDisciplina2);
                         equivalencias.add(equivalencia);
                     }
                 }

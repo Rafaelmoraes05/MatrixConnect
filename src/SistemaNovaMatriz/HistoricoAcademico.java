@@ -8,9 +8,10 @@ import java.util.List;
 
 public class HistoricoAcademico {
 
-    private static List<Disciplina> retornarListaDeDisciplinasDoHistorico() {
+    public static List<Disciplina> retornarListaDeDisciplinasDoHistorico() {
         List<Disciplina> disciplinasHistorico = new ArrayList<>();
         String caminho = LeitorArquivo.obterCaminhoArquivo();
+        //String caminho = LeitorArquivo.obeterCaminhoHistorico();
         try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
             String linha;
 
@@ -38,7 +39,6 @@ public class HistoricoAcademico {
                                 break;
                             }
                         }
-                        System.out.println(codigo + "\t" + disciplina);
                         disciplinasHistorico.add(new Disciplina(codigo, disciplina, 0));
                     }
                 }

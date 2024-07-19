@@ -14,16 +14,22 @@ public class LeitorArquivo {
     }
 
     public static String obterCaminhoMatriz1() {
-        return "Matriz1.txt";
+        return "./MatrixConnect/Matriz1.txt";
     }
 
     public static String obterCaminhoMatriz2() {
-        return "Matriz2.txt";
+        return "./MatrixConnect/Matriz2.txt";
     }
 
     public static String obterCaminhoEquivalencia(){
-        return "Equivalencia.txt";
+        return "./MatrixConnect/Equivalencia.txt";
     }
+
+    /*Teste, remover depois */
+    public static String obeterCaminhoHistorico(){
+        return "./MatrixConnect/historico.txt";
+    }
+
 
     public static String lerConteudoArquivo(String caminhoArquivo) throws IOException {
         List<String> linhas = Files.readAllLines(Paths.get(caminhoArquivo));
